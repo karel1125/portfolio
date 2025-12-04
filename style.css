@@ -1,4 +1,4 @@
-/* Global box-sizing for easier sizing */
+/* Global box-sizing */
 *,
 *::before,
 *::after {
@@ -15,102 +15,189 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 .dark-mode {
-    background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
-    color: #f4f4f4;
+    background: linear-gradient(135deg, #121212, #1f1f1f);
+    color: #e4e6eb;
 }
 
 .container {
     width: 100%;
     max-width: 800px;
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.6s ease-in-out;
+    padding: 50px 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
     text-align: center;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
 .dark-mode .container {
-    background: #1c1c1c;
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+    background: #1e1e1e;
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.07);
 }
 
 .container h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 900;
     color: #2c3e50;
-}
-
-.container h3 {
-    font-size: 1.6rem; /* smaller to differentiate from h1 */
-    font-weight: 700;
-    color: #2c3e50;
-    text-align: left;
+    margin-bottom: 10px;
 }
 
 .dark-mode .container h1 {
-    color: #9fc5ff;
+    color: #7aa9ff;
 }
 
 .profile {
     width: 180px;
+    height: 180px;
     border-radius: 50%;
     display: block;
-    margin: 20px auto;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 5px solid #4a76ff;
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .profile:hover {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 15px 40px rgba(74, 118, 255, 0.6);
+    border-color: #2f54c7;
+}
+
+.container p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    font-weight: 500;
 }
 
 .info-section {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+.info-section h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #34495e;
+    border-bottom: 2px solid #4a76ff;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .info-section h3 {
+    color: #7aa9ff;
+    border-color: #7aa9ff;
 }
 
 .info-section ul {
-    padding-left: 20px;       /* Adjust left padding */
-    margin-left: 0;           /* Remove default left margin */
-    list-style-position: inside; /* Bullets inside text area */
-    line-height: 1.8;
-    text-align: left;
+    padding-left: 25px;
+    margin-left: 0;
+    list-style-position: inside;
+    line-height: 2;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .info-section ul {
+    color: #c1c7d0;
+}
+
+/* Custom bullets with a soft blue circle */
+.info-section ul li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 12px;
+}
+
+.info-section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #4a76ff;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .info-section ul li::before {
+    background-color: #7aa9ff;
 }
 
 button {
     display: inline-block;
-    padding: 12px 22px;
-    margin-top: 20px;
-    font-size: 1rem;
+    padding: 14px 28px;
+    margin-top: 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     background: #4a76ff;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(74, 118, 255, 0.5);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
 }
 
 button:hover {
     background: #2f54c7;
-    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(47, 84, 199, 0.7);
+    transform: translateY(-3px);
 }
 
 .dark-mode button {
-    background: #3478ff;
+    background: #7aa9ff;
+    box-shadow: 0 6px 15px rgba(122, 169, 255, 0.6);
+}
+
+.dark-mode button:hover {
+    background: #558bff;
+    box-shadow: 0 10px 25px rgba(85, 139, 255, 0.8);
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 25px;
+        border-radius: 15px;
+    }
+
+    .container h1 {
+        font-size: 2.2rem;
+    }
+
+    .profile {
+        width: 140px;
+        height: 140px;
+        margin: 25px auto;
+    }
+
+    .info-section h3 {
+        font-size: 1.4rem;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 1rem;
+        margin-top: 25px;
     }
 }
