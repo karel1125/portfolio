@@ -37,6 +37,12 @@ body {
     color: #2c3e50;
 }
 
+.container h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: left;
+
 .dark-mode .container h1 {
     color: #9fc5ff;
 }
