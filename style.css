@@ -1,47 +1,133 @@
+/* GLOBAL ---------------------------------------*/
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
+    font-family: 'Montserrat', sans-serif;
+    background: #f5f7fa;
+    color: #222;
     margin: 0;
     padding: 20px;
+    transition: 0.3s ease-in-out;
 }
 
+/* Dark Mode */
 .dark-mode {
-    background-color: #121212;
-    color: white;
+    background: #121212;
+    color: #eaeaea;
 }
 
+/* Smooth fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.8s ease forwards;
+}
 
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CONTAINER ------------------------------------*/
 .container {
-    max-width: 600px;
+    max-width: 650px;
     margin: auto;
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
 }
 
+/* Dark Mode Container */
+.dark-mode .container {
+    background: rgba(30, 30, 30, 0.7);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
 
-.container h1,
-.container img,
-.container p,
-button {
+/* TEXT ------------------------------------------*/
+.container h1 {
     text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
+.container p {
+    text-align: center;
+    opacity: 0.85;
+}
+
+/* PROFILE IMAGE ---------------------------------*/
 .profile {
     width: 150px;
     border-radius: 50%;
+    display: block;
+    margin: 15px auto;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
+/* Hover glow effect */
+.profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
 
+/* INFO SECTION ----------------------------------*/
 .info-section {
-    text-align: left;
-    max-width: 500px;
-    margin-left: 0;    
-    margin-top: 20px;
+    margin-top: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
+.dark-mode .info-section {
+    background: #1e1e1e;
+    box-shadow: 0 6px 18px rgba(255,255,255,0.05);
+}
+
+.info-section:hover {
+    transform: translateY(-4px);
+}
+
+/* List styling */
 .info-section ul {
     padding-left: 20px;
+}
+
+.info-section li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* BUTTON ----------------------------------------*/
+button {
+    margin: 30px auto 0;
+    display: block;
+    padding: 12px 20px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #005ec7;
+    transform: translateY(-2px);
+}
+
+.dark-mode button {
+    background: #f8d33a;
+    color: #222;
+}
+
+.dark-mode button:hover {
+    background: #e2be30;
 }
