@@ -200,4 +200,31 @@ button:hover {
         font-size: 1rem;
         margin-top: 25px;
     }
+    
+    .social-media {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-media a {
+  font-size: 2rem;
+  color: #4a76ff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #2f54c7;
+  transform: translateY(-6px);
+}
+
+.dark-mode .social-media a {
+  color: #7aa9ff;
+}
+
+.dark-mode .social-media a:hover {
+  color: #558bff;
+}
+
 }
